@@ -8,22 +8,36 @@
 </head>
 <body>
     <?php
-    $dia = 9;
-    $mes = 8;
-    $año = 1569;
-    $añoActual = date("Y");
-    $a = 2021;
-    $res = $añoActual - $año;
+        $año = 1998;
+        $añoActual = date("Y");
+        $edad = $añoActual - $año;
 
-    if ($res <18){
-        echo "Eres menor de edad, no puedes pasar";
-    }else if ($res >65){
-        echo"Eres demasiado mayor para entrar";
-    }
-    else{
-        echo "Puedes entrar";
-    }
+        if ($edad<18){
+            echo "no puede pasar";
+        } elseif ($edad >= 18 && $edad<=65) {
+            echo "puede pasar";
+        } else {
+            echo "demasiado mayor para pasar";
+        }
+    ?>
+    <br>
 
+    <?php
+        $año = new DateTime(date("2003-10-5"));
+        $añoActual = new DateTime();
+        $añosDiferencia = $añoActual->diff($año);
+        echo $añosDiferencia->y;
+        echo "<p>";
+        
+        echo "<p>";
+
+        if ($añosDiferencia->y<18){
+            echo "no puede pasar";
+        } elseif ($añosDiferencia->y >= 18 && $añosDiferencia->y<=65) {
+            echo "puede pasar";
+        } else {
+            echo "demasiado mayor para pasar";
+        }
     ?>
 </body>
 </html>
